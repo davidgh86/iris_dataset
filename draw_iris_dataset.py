@@ -8,18 +8,18 @@ iris_dataset = datasets.load_iris()
 # print(iris_dataset.DESCR)
 
 # indices to plot
-x_index = 0
-y_index = 1
 
-column_x = iris_dataset.data[:, x_index]
-column_x_label = iris_dataset.feature_names[x_index]
-column_y = iris_dataset.data[:, y_index]
-column_y_label = iris_dataset.feature_names[y_index]
+fig, axs = plt.subplots(4, 4)
 
-plt.figure(figsize=(5, 4))
-plt.scatter(column_x, column_y, c=iris_dataset.target)
-plt.xlabel(column_x_label)
-plt.ylabel(column_y_label)
+for x_index in range(4):
+    for y_index in range(4):
+
+        column_x = iris_dataset.data[:, x_index]
+        column_x_label = iris_dataset.feature_names[x_index]
+        column_y = iris_dataset.data[:, y_index]
+        column_y_label = iris_dataset.feature_names[y_index]
+
+        axs[x_index, y_index].scatter(column_x, column_y, c=iris_dataset.target)
 plt.show()
 
 
