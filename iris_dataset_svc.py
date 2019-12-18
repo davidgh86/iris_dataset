@@ -14,8 +14,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle
 clf = svm.SVC(kernel='linear', C=1.0)
 clf.fit(X_train, y_train)
 print(clf.coef_)
-print(clf.score(X, y))
-print(clf.score(X_test, y_test))
+print("score for the whole dataset", clf.score(X, y))
+print("score for the test data", clf.score(X_test, y_test))
 
 #for i in range(len(iris_dataset.data)):
 #    print(clf.predict([iris_dataset.data[i]]), iris_dataset.target[i])
